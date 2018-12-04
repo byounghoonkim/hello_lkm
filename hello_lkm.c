@@ -7,7 +7,7 @@ int init_module(void)
 	return 0;
 }
 
-void clean_module(void) 
+void cleanup_module(void) 
 {
 	printk(KERN_INFO "Bye LKM\n");
 }
