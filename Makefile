@@ -9,3 +9,9 @@ clean:
 
 info:
 	modinfo hello_lkm.ko
+
+
+test:
+	@insmod hello_lkm.ko && echo "OK - insmod" || echo "Failed - insmod"
+	@(lsmod | grep hello_lkm) && echo "OK - lsmod" || echo "Failed - lsmod"
+	@rmmod hello_lkm.ko && echo "OK - rmmod" || echo "Failed - rmmod"
